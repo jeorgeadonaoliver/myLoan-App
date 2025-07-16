@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\myLoan.Infrastructure.Common\myLoan.Infrastructure.Common.csproj" />
     <ProjectReference Include="..\myLoan.Infrastructure.Identity\myLoan.Infrastructure.Identity.csproj" />
+    <ProjectReference Include="..\myLoan.Infrastructure.Persistence\myLoan.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

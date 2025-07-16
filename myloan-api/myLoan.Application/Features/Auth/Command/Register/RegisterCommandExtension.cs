@@ -1,4 +1,5 @@
 ﻿using myLoan.Domain.Entities;
+using myLoan.Domain.myLoanDbEntities;
 
 namespace myLoan.Application.Features.Auth.Command.Register
 {
@@ -14,6 +15,17 @@ namespace myLoan.Application.Features.Auth.Command.Register
                 PasswordHash = cmd.Password,
                 DateOfBirth = cmd.DateOfBirth,
                 UserName = cmd.Email,
+            };
+        }
+
+        public static User MapToUser(this RegisterCommand cmd)
+        {
+            return new User
+            {
+                LastName = cmd.LastName,
+                FirstName = cmd.FirstName,
+                Email = cmd.Email,
+                DateOfBirth = DateOnly.FromDateTime(cmd.DateOfBirth)
             };
         }
     }
