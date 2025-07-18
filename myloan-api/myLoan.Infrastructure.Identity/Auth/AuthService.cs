@@ -40,7 +40,7 @@ public class AuthService : IAuthService
 
     public async Task<Result<string>> LoginAsync(string email, string password)
     {
-       
+        string? id = string.Empty;
         var userCredentials = await GetUserCredentials(email ?? "");
         var passwordCheck = await IsPasswordValid(userCredentials.Value.user, password);
 
@@ -50,6 +50,7 @@ public class AuthService : IAuthService
         }
 
         var token = GenerateJwtToken(userCredentials.Value.user);
+        id = userCredentials.Value.user.Id;
         return Result.Ok(token);
     }
 
@@ -57,14 +58,15 @@ public class AuthService : IAuthService
     {
         var result = await _userManager.CreateAsync(cmd, cmd.PasswordHash ?? "");
 
-        if (!result.Succeeded) 
+        if (!result.Succeeded)
         {
             return Result.Fail($"Error on registerring user! {string.Join("; ", result.Errors.Select(e => e.Description))}");
         }
 
         var resultRole = await _userManager.AddToRoleAsync(cmd, "User");
         var token = GenerateJwtToken(cmd);
-        return Result.Ok(token);
+        
+        return Result.Ok(token).WithSuccess(cmd.Id);
     }
     private string GenerateJwtToken(ApplicationUser user)
     {

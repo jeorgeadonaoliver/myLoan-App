@@ -1,13 +1,13 @@
-import { BehaviorSubject, catchError, of, switchMap, tap, throwError } from "rxjs";
+import { BehaviorSubject, catchError, filter, of, switchMap, tap, throwError } from "rxjs";
 import { LoginFormFields } from "./login-form-fields";
 import { LoginService } from "./login.service";
 import { computed, Injectable, signal } from "@angular/core";
-import { sign } from "crypto";
 import { toSignal } from "@angular/core/rxjs-interop";
+import { Router } from "@angular/router";
 
 @Injectable({providedIn:'root'})
 export class LoginStore{
-    constructor(private loginService: LoginService){}
+    constructor(private loginService: LoginService, private route : Router){}
     private formSubject = new BehaviorSubject<LoginFormFields | null>(null);
 
     private loading = signal(true);
@@ -30,7 +30,7 @@ export class LoginStore{
                     tap((res) => {
                         this.loading.set(false);
                         this.success.set(true);
-                        console.log('this is response', res);
+                        this.route.navigate([`/users/dashboard/${form.email}`]);
                     }),
                     catchError((error) => {
                         this.error$.set(error.message || 'error on login!');
@@ -45,7 +45,4 @@ export class LoginStore{
     sendRequest(form: LoginFormFields){
         this.formSubject.next(form);
     }
-
-
-
 }

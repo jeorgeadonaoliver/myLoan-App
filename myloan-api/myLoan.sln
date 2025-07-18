@@ -27,9 +27,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myLoan.Infrastructure.Persi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myLoan.Infrastructure.Common", "myLoan.Infrastructure.Common\myLoan.Infrastructure.Common.csproj", "{B05DAC72-A46A-4238-A1AF-E1CA8A73A5D8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "myLoan.AuthenticateUser", "myLoan.AuthenticateUser", "{C9977915-372D-49D8-B90B-2C91CF97FD78}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "myLoan.Api.AuthenticateUser", "myLoan.Api.AuthenticateUser", "{C9977915-372D-49D8-B90B-2C91CF97FD78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myLoan.AuthenticateUser.Api", "myLoan.AuthenticateUser.Api\myLoan.AuthenticateUser.Api.csproj", "{F6064D30-DFE6-4DBF-5616-A04E78BFEAB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myLoan.Api.AuthenticateUser", "myLoan.AuthenticateUser.Api\myLoan.Api.AuthenticateUser.csproj", "{F6064D30-DFE6-4DBF-5616-A04E78BFEAB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "myLoan.Api.User", "myLoan.Api.User", "{E13928FC-A516-405D-8498-5E8105FFEEFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myLoan.Api.Users", "myLoan.Users.Api\myLoan.Api.Users.csproj", "{81975016-7CBE-4085-B264-24C484BF28BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,10 @@ Global
 		{F6064D30-DFE6-4DBF-5616-A04E78BFEAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6064D30-DFE6-4DBF-5616-A04E78BFEAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6064D30-DFE6-4DBF-5616-A04E78BFEAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81975016-7CBE-4085-B264-24C484BF28BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81975016-7CBE-4085-B264-24C484BF28BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81975016-7CBE-4085-B264-24C484BF28BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81975016-7CBE-4085-B264-24C484BF28BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +91,8 @@ Global
 		{B05DAC72-A46A-4238-A1AF-E1CA8A73A5D8} = {46706A8A-A0DD-49D2-9DBB-558CCE8EC46F}
 		{C9977915-372D-49D8-B90B-2C91CF97FD78} = {4F2C81B9-4814-493F-9185-E667C0FEF387}
 		{F6064D30-DFE6-4DBF-5616-A04E78BFEAB3} = {C9977915-372D-49D8-B90B-2C91CF97FD78}
+		{E13928FC-A516-405D-8498-5E8105FFEEFD} = {4F2C81B9-4814-493F-9185-E667C0FEF387}
+		{81975016-7CBE-4085-B264-24C484BF28BB} = {E13928FC-A516-405D-8498-5E8105FFEEFD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC97167F-F855-4841-A45E-8C536B6DA340}

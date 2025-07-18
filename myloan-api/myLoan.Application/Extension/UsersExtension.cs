@@ -1,4 +1,5 @@
 ﻿using myLoan.Application.Features.Users.Query.GetUsers;
+using myLoan.Application.Features.Users.Query.GetUsersByEmail;
 using myLoan.Application.Features.Users.Query.GetUsersById;
 using myLoan.Domain.myLoanDbEntities;
 
@@ -50,6 +51,18 @@ public static class UsersExtension
             Status = users.Status,
             UserId = users.UserId,
 
+        };
+    }
+
+    public static GetUsersByEmailQueryDto MapToGetUsersByEmailQueryDto(this User user) 
+    {
+        return new GetUsersByEmailQueryDto 
+        {
+            LastName = user.LastName,
+            FirstName = user.FirstName,
+            Email = user.Email,
+            UserId= user.UserId,
+               
         };
     }
 }

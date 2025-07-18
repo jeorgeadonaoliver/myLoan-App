@@ -3,7 +3,7 @@ import { RegisterFormComponent } from "./register-form.component";
 import { CommonModule } from "@angular/common";
 import { RegisterStore } from "./register.store";
 import { RegisterFormFields } from "./register-form-fields";
-import { FormComponent } from "../../../shared/components/form-component";
+import { FormComponent } from "../../../shared/components/form.component";
 
 @Component({
   selector: 'app-register-page',
