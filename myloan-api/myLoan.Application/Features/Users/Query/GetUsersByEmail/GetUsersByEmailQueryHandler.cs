@@ -16,6 +16,7 @@ public class GetUsersByEmailQueryHandler : IRequestHandler<GetUsersByEmailQuery,
 
     public async Task<Result<IEnumerable<GetUsersByEmailQueryDto>>> HandleAsync(GetUsersByEmailQuery request, CancellationToken cancellationToken)
     {
+        
         var result = await _repository.GetByAsync(x => x.Email == request.email, cancellationToken);
         if (result.IsFailed || !result.Value.Any()) 
         {

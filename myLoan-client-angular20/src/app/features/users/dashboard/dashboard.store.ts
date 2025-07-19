@@ -10,10 +10,10 @@ import { UserInfo, UserStateService } from "../../../core/state/user-state-servi
 export class DashboardStore{
     constructor(private httpService: DashboardService, private userstateservice : UserStateService){}
     private loading = signal(false);
-    private error$ = signal<string | null>(null);
+    private userinfo$ = signal<UserInfo | null>(null);
     
-    loadUser(email: string): Observable<UserInfo>{
-        return this.httpService.send(email).pipe(
+    loadUser(email: string){
+         this.httpService.send(email).pipe(
             map((response: ApiResponse<DashboardResponseDto>) => {
 
                 if(!response.data){
@@ -29,8 +29,12 @@ export class DashboardStore{
                         firstName: data[0].firstName, 
                         email: data[0].email,
                         userId:data[0].userId,
+                        createdAt: data[0].createdAt,
+                        updatedAt: data[0].updatedAt,
+                        status: data[0].status
                     };
                     console.log('map: ',_userinfo);
+                    this.userinfo$.set(_userinfo);
                     return _userinfo;
                 }
                 throw new Error('API returned an empty array');
@@ -43,6 +47,6 @@ export class DashboardStore{
                 console.error('Error on mappong userinfo:', err);
                 return throwError(err.message);
             })
-        );
+        ).subscribe();
     }
 }

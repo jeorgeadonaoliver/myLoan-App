@@ -15,7 +15,7 @@ export const routes: Routes = [
         path: 'users',
         component: MainLayout,
         children: [
-            { path: '', loadChildren: () => import('./features/users/dashboard/dashboard.route').then(m => m.route)},
+            { path: 'dashboard', loadChildren: () => import('./features/users/dashboard/dashboard.route').then(m => m.route)},
             { path: 'profile', loadChildren: () => import('./features/users/profile/profile.route').then(m => m.route)}
         ]   
     }    

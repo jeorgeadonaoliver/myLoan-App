@@ -54,15 +54,26 @@ public static class UsersExtension
         };
     }
 
-    public static GetUsersByEmailQueryDto MapToGetUsersByEmailQueryDto(this User user) 
+    public static GetUsersByEmailQueryDto MapToGetUsersByEmailQueryDto(this User users) 
     {
         return new GetUsersByEmailQueryDto 
         {
-            LastName = user.LastName,
-            FirstName = user.FirstName,
-            Email = user.Email,
-            UserId= user.UserId,
-               
+            AddressLine1 = users.AddressLine1,
+            AddressLine2 = users.AddressLine2,
+            CreatedAt = users.CreatedAt,
+            UpdatedAt = users.UpdatedAt,
+            City = users.City,
+            Country = users.Country,
+            DateOfBirth = users.DateOfBirth,
+            Email = users.Email,
+            FirstName = users.FirstName,
+            LastName = users.LastName,
+            Phone = users.Phone,
+            PostalCode = users.PostalCode,
+            StateProvince = users.StateProvince,
+            Status = users.Status,
+            UserId = users.UserId,
+
         };
     }
 }

@@ -1,93 +1,23 @@
 import { Component } from "@angular/core";
 import { FormComponent } from "../../../shared/components/form.component";
 import { CardComponent } from "../../../shared/components/basic-card.component";
+import { ProfileComponent } from "./profile.component";
 
 @Component({
     selector: 'app-profile-page',
-    imports: [CardComponent],
+    imports: [CardComponent, ProfileComponent],
     template: `
         <app-basic-card>
         <div>
             <p class="text-4xl font-bold leading-tight tracking-tight text-gray-800 mb-8">
-                Update your account
+                Update your profile
             </p>
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="firstName">First Name</label>
-          <input placeholder="Enter your first name" formControlName="firstName"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="firstName" type="text">
+            <p class="text-gray-700 leading-relaxed text-sm italic">
+              - <strong>User ID</strong> and <strong>Email</strong> is disabled on purpose. please contact HR for the information update.
+            </p>
+            <br/>
+             <app-profile-component></app-profile-component>
         </div>
-
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="lastName">Last Name</label>
-          <input placeholder="Enter your last name" formControlName="lastName"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="lastName" type="text">
-        </div>
-
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="dateOfBirth">Date of Birth</label>
-          <input placeholder="YYYY-MM-DD" formControlName="dateOfBirth"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="dateOfBirth" type="text">
-        </div>
-
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="email">Email</label>
-          <input placeholder="admin@example.com" formControlName="email"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="email" type="email">
-        </div>
-
-        <div class="md:col-span-2">
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="addressLine1">Address 1</label>
-          <input placeholder="Enter you address" formControlName="addressLine1"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="addressLine1" type="text">
-        </div>
-
-        <div class="md:col-span-2">
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="addressLine2">Address 2</label>
-          <input placeholder="Enter you address" formControlName="addressLine2"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="addressLine2" type="text">
-        </div>
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="firstName">City</label>
-          <input placeholder="Enter your city" formControlName="city"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="city" type="text">
-        </div>
-
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="stateProvince">State Province</label>
-          <input placeholder="Enter state province" formControlName="stateProvince"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="stateProvince" type="text">
-        </div>
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="firstName">Postal Code</label>
-          <input placeholder="Enter postal code" formControlName="postalCode"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="postalCode" type="text">
-        </div>
-
-        <div>
-          <label class="block mb-2 text-sm font-medium text-gray-800" for="stateProvince">Country</label>
-          <input placeholder="Enter country" formControlName="country"
-            class="placeholder:italic placeholder-gray-400 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-            id="country" type="text">
-        </div>
-
-        <div class="md:col-span-2">
-          <button type="submit"
-            class="w-full bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white">
-            Create an account
-          </button>
-        </div>
-      </form>
-  </div>
         </app-basic-card>
 
     `,

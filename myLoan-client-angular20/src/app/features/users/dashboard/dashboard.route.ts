@@ -3,7 +3,7 @@ import { DashboardPage } from "./dashboard.page.component";
 
 export const route : Routes = [
     {
-        path: 'dashboard/:email',
+        path: ':email',
         component: DashboardPage,
         pathMatch: 'prefix'
     }
