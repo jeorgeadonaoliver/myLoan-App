@@ -10,8 +10,8 @@ export class ProfileService{
     private userapiUrl = `${environment.usersApiUrl}/Users/users`;
     constructor(private http: HttpClient){}
 
-    sendRequest(data: ProfileFormFields): Observable<ApiResponse<string>>{
-        return this.http.put<ApiResponse<string>>(this.userapiUrl, data).pipe(
+    send(data: ProfileFormFields): Observable<ApiResponse<string>>{
+        return this.http.post<ApiResponse<string>>(this.userapiUrl, data).pipe(
             catchError((err:HttpErrorResponse) => {
                 console.error('error on profile update: ', err.message);
                 return throwError(() => err);

@@ -14,9 +14,6 @@ export class DashboardService{
         const apiUrl = `${environment.usersApiUrl}/Users/usersbyemail?email=${encodedEmail}`
 
         return this.httpClient.get<ApiResponse<DashboardResponseDto>>(apiUrl).pipe(
-            tap((res)=> {
-                console.log('service', res);
-            }),
             catchError((err: HttpErrorResponse) => {
                 console.error('Error on Dashboardservice: ', err.message);
                 return throwError(() => err)

@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "myLoan.Api.User", "myLoan.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myLoan.Api.Users", "myLoan.Users.Api\myLoan.Api.Users.csproj", "{81975016-7CBE-4085-B264-24C484BF28BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0AF28F78-0568-4C71-A21B-11E98AB28186}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myLoan.test", "myLoan.test\myLoan.test.csproj", "{41FAD435-DEF0-4D1D-958E-0DDEC874D46D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{81975016-7CBE-4085-B264-24C484BF28BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81975016-7CBE-4085-B264-24C484BF28BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81975016-7CBE-4085-B264-24C484BF28BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41FAD435-DEF0-4D1D-958E-0DDEC874D46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41FAD435-DEF0-4D1D-958E-0DDEC874D46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41FAD435-DEF0-4D1D-958E-0DDEC874D46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41FAD435-DEF0-4D1D-958E-0DDEC874D46D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +101,7 @@ Global
 		{F6064D30-DFE6-4DBF-5616-A04E78BFEAB3} = {C9977915-372D-49D8-B90B-2C91CF97FD78}
 		{E13928FC-A516-405D-8498-5E8105FFEEFD} = {4F2C81B9-4814-493F-9185-E667C0FEF387}
 		{81975016-7CBE-4085-B264-24C484BF28BB} = {E13928FC-A516-405D-8498-5E8105FFEEFD}
+		{41FAD435-DEF0-4D1D-958E-0DDEC874D46D} = {0AF28F78-0568-4C71-A21B-11E98AB28186}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC97167F-F855-4841-A45E-8C536B6DA340}

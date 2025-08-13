@@ -40,7 +40,7 @@ namespace myLoan.Users.Api.Controllers
             return Ok(PayloadHandler.CreatePayload(data.Value));
         }
 
-        [HttpPut("users")]
+        [HttpPost("users")]
         public async Task<IActionResult> UpdateUser(UpdateUserCommand cmd, CancellationToken cancellationToken)
         {
             var data = await _mediator.Send(cmd, cancellationToken);

@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { FormComponent } from "../../../shared/components/form.component";
 import { CardComponent } from "../../../shared/components/basic-card.component";
 import { ProfileComponent } from "./profile.component";
+import { ProfileStore } from "./profile.store";
+import { ProfileFormFields } from "./profile.form-fields";
 
 @Component({
     selector: 'app-profile-page',
@@ -16,12 +18,16 @@ import { ProfileComponent } from "./profile.component";
               - <strong>User ID</strong> and <strong>Email</strong> is disabled on purpose. please contact HR for the information update.
             </p>
             <br/>
-             <app-profile-component></app-profile-component>
+             <app-profile-component (formSubmitted)="onSubmit($event)"></app-profile-component>
         </div>
         </app-basic-card>
 
     `,
 })
 export class ProfilePage{
+    constructor(private store: ProfileStore){}
 
+    onSubmit(formData: ProfileFormFields){
+        this.store.sendRequest(formData);
+    }
 }

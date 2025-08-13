@@ -1,13 +1,22 @@
 import { computed, Injectable, signal } from "@angular/core";
 
 export interface UserInfo{
-    email: string;
-    lastName: string;
+
+    userId: number
     firstName: string;
-    userId: string;
+    lastName: string;
+    email: string;  
+    phone: string;
+    dateOfBirth: string;
+    addressLine1: string;
+    addressLine2: string;
+    city: string;
+    stateProvince: string;
+    postalCode: string;
+    country: string;
     createdAt: string;
     updatedAt: string;
-    status: string;
+    status: number;
 }
 
 @Injectable({providedIn: 'root'})
@@ -21,6 +30,15 @@ export class UserStateService{
     readonly createdAt$ = computed(() => this._user()?.createdAt);
     readonly updateAt$ = computed(() => this._user()?.updatedAt);
     readonly status$ = computed(() => this._user()?.status);
+    readonly phone = computed(() => this._user()?.phone);
+    readonly dateOfBirth = computed(() => this._user()?.dateOfBirth);
+    readonly addressLine1 = computed(() => this._user()?.addressLine1);
+    readonly addressLine2 = computed(() => this._user()?.addressLine2);
+    readonly city = computed(() => this._user()?.city);
+    readonly stateProvince = computed(() => this._user()?.stateProvince);
+    readonly postalCode = computed(() => this._user()?.postalCode);
+    readonly country = computed(() => this._user()?.country);
+
     readonly user$ = this._user.asReadonly();
 
     setUserInfo(user: UserInfo){

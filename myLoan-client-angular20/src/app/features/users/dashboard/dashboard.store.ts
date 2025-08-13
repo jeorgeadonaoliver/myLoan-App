@@ -21,7 +21,6 @@ export class DashboardStore{
                 }
 
                 const data = response.data;
-                console.log('data store:', data);
 
                 if(Array.isArray(data) && data.length > 0){
                     const _userinfo: UserInfo = {
@@ -31,16 +30,24 @@ export class DashboardStore{
                         userId:data[0].userId,
                         createdAt: data[0].createdAt,
                         updatedAt: data[0].updatedAt,
-                        status: data[0].status
+                        status: data[0].status,
+                        addressLine1: data[0].addressLine1,
+                        addressLine2: data[0].addressLine2,
+                        country: data[0].country,
+                        postalCode: data[0].postalCode,
+                        city: data[0].city,
+                        stateProvince: data[0].stateProvince,
+                        phone: data[0].phone,
+                        dateOfBirth: data[0].dateOfBirth
                     };
-                    console.log('map: ',_userinfo);
                     this.userinfo$.set(_userinfo);
+
+                    console.log(_userinfo);
                     return _userinfo;
                 }
                 throw new Error('API returned an empty array');
             }),
             tap((_userInfo : UserInfo) => {
-                console.log('tap: ',_userInfo)
                 this.userstateservice.setUserInfo(_userInfo)
             }),
             catchError((err)=> {
