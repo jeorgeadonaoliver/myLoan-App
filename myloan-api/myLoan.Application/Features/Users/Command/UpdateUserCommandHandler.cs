@@ -19,7 +19,7 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, Resul
 
     public async Task<Result<int>> HandleAsync(UpdateUserCommand request, CancellationToken cancellationToken)
     {
-        var validationResult = await _validationHandler.ValidateAsync<UpdateUserCommand>(new UpdateUserCommandValidation(_repository), request, cancellationToken);
+        var validationResult = await _validationHandler.ValidateAsync(new UpdateUserCommandValidation(_repository), request, cancellationToken);
         if(validationResult.IsFailed)
             return Result.Fail(ErrorHandler.AgggateErrors(validationResult.Errors));
 

@@ -27,8 +27,4 @@
     <ProjectReference Include="..\myLoan.Domain\myLoan.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Request\" />
-  </ItemGroup>
-
 </Project>

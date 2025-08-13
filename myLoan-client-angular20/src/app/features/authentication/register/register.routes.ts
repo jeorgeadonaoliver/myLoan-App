@@ -3,7 +3,7 @@ import { RegisterPage } from './register-page.component';
 
 export const routes: Routes = [
         {
-            path:'register',
+            path:'',
             component: RegisterPage,
             pathMatch:'prefix'
         }

@@ -47,9 +47,8 @@ public static class IdentityServiceRegistration
        .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
        .AddDefaultTokenProviders();
 
-
         service.AddTransient<IAuthService, AuthService>();
-
+ 
         return service;
     }
 }

@@ -24,7 +24,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<string>>
             return Result.Fail<string>($"{request} cannot be null");
         }
 
-        var validationResult = await _validationHandler.ValidateAsync<LoginCommand>(new LoginCommandValidation(), request, cancellationToken);
+        var validationResult = await _validationHandler.ValidateAsync(new LoginCommandValidation(), request, cancellationToken);
         if (validationResult.IsFailed) 
         {
             return Result.Fail<string>($"{string.Join(";", validationResult.Errors)}");

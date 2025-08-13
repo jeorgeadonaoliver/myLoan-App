@@ -21,7 +21,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<st
 
     public async Task<Result<string>> HandleAsync(RegisterCommand request, CancellationToken cancellationToken)
     {
-        var validationResult = await _validationHandler.ValidateAsync<RegisterCommand>(new RegisterCommandValidation(_authService), request, cancellationToken);
+        var validationResult = await _validationHandler.ValidateAsync(new RegisterCommandValidation(_authService), request, cancellationToken);
         if (validationResult.IsFailed)
             return Result.Fail($"Auth error: {string.Join(";", validationResult.Errors)}");
 

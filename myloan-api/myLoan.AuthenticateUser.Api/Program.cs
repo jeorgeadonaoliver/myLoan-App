@@ -1,18 +1,20 @@
+using myLoan.Api.AuthenticateUser.ServiceExtention;
 using myLoan.AuthenticateUser.Api.Extension;
 using myLoan.Infrastructure.Common;
 using myLoan.Infrastructure.Identity;
 using myLoan.Infrastructure.Persistence;
-using myLoan.Application.Service;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthorization();
-builder.Services.AddIdentityService(builder.Configuration);
 builder.Services.AddPersistenceRegistration(builder.Configuration);
+builder.Services.AddIdentityService(builder.Configuration);
+builder.Services.AddAuthorization();
+
 builder.Services.AddRequestService();
 builder.Services.AddAuthenticationService();
-builder.Services.AddCorsService();
 
+builder.Services.AddCorsService();
 
 builder.Services.AddControllers();
 
