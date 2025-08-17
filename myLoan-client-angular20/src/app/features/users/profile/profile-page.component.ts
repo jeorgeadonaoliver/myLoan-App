@@ -9,6 +9,7 @@ import { ProfileFormFields } from "./profile.form-fields";
     selector: 'app-profile-page',
     imports: [CardComponent, ProfileComponent],
     template: `
+    <div class="w-1/2">
         <app-basic-card>
         <div>
             <p class="text-4xl font-bold leading-tight tracking-tight text-gray-800 mb-8">
@@ -21,7 +22,7 @@ import { ProfileFormFields } from "./profile.form-fields";
              <app-profile-component (formSubmitted)="onSubmit($event)"></app-profile-component>
         </div>
         </app-basic-card>
-
+    </div>
     `,
 })
 export class ProfilePage{
