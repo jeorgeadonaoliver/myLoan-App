@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, Observable, tap, throwError } from "rxjs";
+import { catchError, Observable, throwError } from "rxjs";
 import { ApiResponse } from "../../../shared/domain/apiResponse.type";
 import { DashboardResponseDto } from "./dashboard-field.model";
 import { environment } from "../../../environment/environment";
@@ -11,7 +11,7 @@ export class DashboardService{
 
     send(email: string) : Observable<ApiResponse<DashboardResponseDto>>{
         const encodedEmail = encodeURIComponent(email);
-        const apiUrl = `${environment.usersApiUrl}/Users/usersbyemail?email=${encodedEmail}`
+        const apiUrl = `${environment.usersApiUrl}/usersbyemail?email=${encodedEmail}`
 
         return this.httpClient.get<ApiResponse<DashboardResponseDto>>(apiUrl).pipe(
             catchError((err: HttpErrorResponse) => {

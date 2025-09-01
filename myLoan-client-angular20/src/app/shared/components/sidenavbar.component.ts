@@ -25,13 +25,13 @@ import { UserStateService } from "../../core/state/user-state-service";
                 </a>
             </li>
             <li class="hover:bg-gray-700 transition-colors duration-200">
-                <a href="#" class="block py-4 text-center text-xl" title="Profile">
+                <a [routerLink]="['/users/dashboard', email()]" class="block py-4 text-center text-xl" title="Profile">
                     <ng-icon name="matFolder" size="26" color="white"></ng-icon>
                     <span class=" text-white text-xs font-medium leading-none opacity-0 md:opacity-100 max-h-0 md:max-h-none overflow-hidden transition-all duration-200 ease-in-out  w-full  md:block hidden sm:block ">Docs</span>
                 </a>
             </li>
             <li class="hover:bg-gray-700 transition-colors duration-200">
-                <a href="#" class="block py-4 text-center text-xl" title="Settings">
+                <a [routerLink]="['/loan/loanrequest']" class="block py-4 text-center text-xl" title="Settings">
                     <ng-icon name="matRealEstateAgent" size="26" color="white"></ng-icon>
                     <span class=" text-white text-xs font-medium leading-none opacity-0 md:opacity-100 max-h-0 md:max-h-none overflow-hidden transition-all duration-200 ease-in-out  w-full  md:block hidden sm:block ">Loans</span>
                 </a>

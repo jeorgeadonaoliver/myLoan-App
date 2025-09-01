@@ -1,11 +1,9 @@
 ﻿using FluentResults;
 using FluentValidation;
-using myLoan.Application.Common;
 using myLoan.Application.Features.Users.Command;
 using myLoan.Application.Features.Users.Query.GetUsers;
 using myLoan.Application.Features.Users.Query.GetUsersByEmail;
 using myLoan.Application.Features.Users.Query.GetUsersById;
-using myLoan.Application.Interface.Common;
 using myLoan.Application.Interface.Request;
 using System.Reflection;
 

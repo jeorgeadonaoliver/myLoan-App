@@ -20,6 +20,13 @@ export const routes: Routes = [
             { path: 'profile', loadChildren: () => import('./features/users/profile/profile.route').then(m => m.route)}
         ]   
     },
+    {
+        path: 'loan',
+        component: MainLayout,
+        children: [
+            { path: 'loanrequest', loadChildren: () => import('./features/loan/loanrequest/loanrequest.route').then(m => m.route)}
+        ]
+    },
     { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
     { path: '**', redirectTo: '/auth/login' } 
 ];

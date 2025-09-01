@@ -17,4 +17,8 @@
     <ProjectReference Include="..\myLoan.Domain\myLoan.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\LoanRequest\" />
+  </ItemGroup>
+
 </Project>

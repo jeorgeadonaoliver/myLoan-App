@@ -7,7 +7,7 @@ import { ApiResponse } from "../../../shared/domain/apiResponse.type";
 
 @Injectable({providedIn:'root'})
 export class ProfileService{
-    private userapiUrl = `${environment.usersApiUrl}/Users/users`;
+    private userapiUrl = `${environment.usersApiUrl}/users`;
     constructor(private http: HttpClient){}
 
     send(data: ProfileFormFields): Observable<ApiResponse<string>>{
