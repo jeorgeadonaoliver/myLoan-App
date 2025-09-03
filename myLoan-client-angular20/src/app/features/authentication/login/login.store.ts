@@ -30,7 +30,7 @@ export class LoginStore{
                     tap((res) => {
                         this.loading.set(false);
                         this.success.set(true);
-                        this.route.navigate([`/users/dashboard/${form.email}`]);
+                        this.route.navigate([`/app/dashboard/${form.email}`]);
                     }),
                     catchError((error) => {
                         this.error$.set(error.message || 'error on login!');

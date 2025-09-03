@@ -1,3 +1,4 @@
+using myLoan.Api.AuthenticateUser.Endpoint;
 using myLoan.Api.AuthenticateUser.ServiceExtention;
 using myLoan.AuthenticateUser.Api.Extension;
 using myLoan.Infrastructure.Common;
@@ -16,7 +17,8 @@ builder.Services.AddAuthenticationService();
 
 builder.Services.AddCorsService();
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -39,8 +41,9 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAllOrigins");
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
-app.MapControllers();
+//app.MapControllers();
+app.MapAuthEndpoint();
 
 app.Run();

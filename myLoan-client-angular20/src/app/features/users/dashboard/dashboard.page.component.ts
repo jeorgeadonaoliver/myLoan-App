@@ -1,4 +1,4 @@
-import { Component, OnInit, runInInjectionContext, Signal, inject, EnvironmentInjector, signal, computed, effect } from "@angular/core";
+import { Component, signal, computed, effect } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DashboardStore } from "./dashboard.store";
 import { DashboardComponent } from "./dashboard.component";
@@ -9,7 +9,9 @@ import { UserStateService } from "../../../core/state/user-state-service";
     imports: [DashboardComponent],
     providers:[],
     template: `
-    <app-dashboard-component [fullname]="fullname()" />
+        <div>
+            <app-dashboard-component [fullname]="fullname()" />
+        </div>
     `
 })
 

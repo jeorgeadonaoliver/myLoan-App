@@ -3,7 +3,7 @@ import { LoanRequestPage } from "./loanrequest.page.component";
 
 export const route : Routes = [
     {  
-        path: 'loanrequest',
+        path: '',
         component: LoanRequestPage,
         pathMatch: 'prefix'
     }

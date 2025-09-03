@@ -1,11 +1,14 @@
 import { Component } from "@angular/core";
+import { LoanRequestComponent } from "./loanrequest.component";
 
 @Component({
     selector: 'app-loanrequest',
-    imports: [],
+    imports: [LoanRequestComponent],
     providers:[],
     template: `
-    <p>loanrequest works!</p>
+    <div>
+        <app-loanrequest-component></app-loanrequest-component>
+    </div>
     `
 })
 
